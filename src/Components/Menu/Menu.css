@@ -1,0 +1,215 @@
+/* Style de la sidebar */
+.sidebar {
+  position: fixed; /* Fixe la sidebar à gauche de l'écran */
+  top: 0;
+  left: -230px; /* Cache la sidebar à gauche de l'écran */
+  width: 250px; /* Largeur de la sidebar */
+  height: 100%; /* Prend toute la hauteur de l'écran */
+  background-color: #007bff; /* Couleur bleue pour la sidebar */
+  color: white; /* Couleur du texte en blanc */
+  transition: left 0.3s ease; /* Animation fluide pour l'ouverture/fermeture */
+  padding: 20px;
+  z-index: 1000; /* Met la sidebar au-dessus des autres éléments */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligne les éléments du menu en haut */
+}
+
+/* Affiche la sidebar lorsqu'elle est ouverte */
+.sidebar.open {
+  left: 0; /* La sidebar glisse vers l'écran */
+}
+
+/* Style des liens de navigation dans la sidebar */
+.sidebar nav ul {
+  list-style: none; /* Supprime les puces des listes */
+  padding: 0;
+  margin: 0;
+  margin-top: 50px; /* Décale le menu vers le bas */
+}
+
+.sidebar nav ul li {
+  margin: 20px 0; /* Espacement vertical entre les liens */
+  transition: transform 0.3s ease; /* Animation de transformation au survol */
+}
+
+.sidebar nav ul li a {
+  color: white; /* Texte en blanc */
+  text-decoration: none; /* Supprime le soulignement */
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.3s ease; /* Effet de transition au survol */
+  padding: 10px;
+  display: block;
+  border-radius: 5px; /* Ajoute un arrondi aux bords */
+}
+
+/* Effet de hover sur les éléments du menu */
+.sidebar nav ul li a:hover {
+  color: #f1f1f1; /* Couleur claire au survol */
+  transform: translateX(10px); /* Décale légèrement à droite au survol */
+  background-color: #0056b3; /* Change la couleur de fond au survol */
+}
+
+/* Bouton de fermeture dans la sidebar */
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Contenu principal */
+.main-content {
+  margin-left: 0; /* Par défaut, sans espace à gauche */
+  transition: margin-left 0.3s ease; /* Animation fluide lors de l'ouverture de la sidebar */
+}
+
+.main-content.with-sidebar {
+  margin-left: 250px; /* Décale le contenu principal pour laisser de l'espace à la sidebar */
+}
+
+/* Bouton pour ouvrir la sidebar */
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: #007bff; /* Fond bleu pour le bouton menu */
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001; /* Au-dessus de la sidebar */
+  padding: 10px;
+  border-radius: 5px;
+  transition: width 0.3s ease; /* Animation pour ajuster la largeur */
+}
+
+/* Changement de couleur au survol du bouton menu */
+.menu-btn:hover {
+  background-color: #0056b3; /* Couleur bleue plus foncée au survol */
+}
+
+/* Lorsque la sidebar est fermée, élargir le bouton de menu */
+.sidebar.hidden + .menu-btn {
+  width: 50px; /* Augmenter la largeur du bouton lorsqu'il est caché */
+  padding: 15px; /* Plus d'espace à l'intérieur du bouton */
+}
+
+/* Contenu au milieu de la page */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Prend toute la hauteur de l'écran */
+  font-size: 2rem; /* Taille du texte */
+  color: #007bff; /* Bleu pour le texte */
+}
+
+/* Reset des marges et paddings pour un style uniforme */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5; /* Fond gris clair pour le corps */
+  color: #333; /* Couleur du texte */
+}
+
+/* Contenu des pages */
+.page-container {
+  margin-left: 250px; /* Laisse de la place pour la sidebar si elle est ouverte */
+  padding: 20px;
+  transition: margin-left 0.3s ease; /* Transition pour un effet fluide */
+}
+
+/* Lorsque la sidebar est ouverte, ajuste la marge du contenu */
+.sidebar.open ~ .page-container {
+  margin-left: 250px; /* Ajuste la marge si la sidebar est ouverte */
+}
+
+.content {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+/* Pour les graphiques (comme les courbes de température, humidité) */
+.chart-container {
+  max-width: 100%; /* Limite la largeur à 100% de l'espace disponible */
+  overflow: hidden; /* Empêche tout débordement */
+  padding: 20px;
+}
+
+.chart {
+  width: 100%;
+  max-width: 10px; /* Limite la taille maximale des graphiques */
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustement des éléments textuels pour les rendre plus lisibles */
+h1, h2, h3, h4 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Réduction de la taille de la sidebar sur les écrans plus petits */
+@media (max-width: 768px) {
+  .sidebar {
+    left: -200px;
+    width: 200px; /* Réduit la largeur de la sidebar */
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+
+  .menu-btn {
+    font-size: 20px;
+  }
+
+  .page-container {
+    margin-left: 200px; /* Ajuste la marge en fonction de la taille de la sidebar */
+  }
+}
+
+/* Réduction de la taille des éléments sur les écrans très petits */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 180px; /* Sidebar encore plus petite sur petits écrans */
+  }
+
+  .content {
+    font-size: 1.5rem;
+  }
+
+  .chart {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .page-container {
+    margin-left: 180px; /* Ajuste la marge */
+  }
+}
+canvas {
+  display: block;        /* Force le canvas à être un élément de type bloc */
+  width: 80%;            /* Prend 80% de la largeur du conteneur parent */
+  max-width: 600px;      /* Largeur maximale à 600px */
+  height: 300px;         /* Hauteur fixe du canvas (ajustez à votre convenance) */
+  margin: 0 auto;        /* Centre le canvas horizontalement si nécessaire */
+}
+

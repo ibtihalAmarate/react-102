@@ -1,0 +1,66 @@
+/* .table-container */
+.table-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff; /* Fond blanc pour le tableau */
+}
+
+/* .table-title */
+.table-title {
+  text-align: center;
+  font-size: 24px;
+  color: #007bff; /* Bleu primaire */
+  margin-bottom: 10px;
+}
+
+/* .table-description */
+.table-description {
+  text-align: center;
+  font-size: 16px;
+  color: #555; /* Gris foncé pour la description */
+  margin-bottom: 20px;
+}
+
+/* table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* th, td */
+th, td {
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+}
+
+/* th */
+th {
+  background-color: #e9f2fd; /* Bleu clair */
+  color: #007bff; /* Bleu primaire pour les titres */
+}
+
+/* tr:nth-child(even) */
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Fond gris clair pour les lignes paires */
+}
+
+/* tr:hover */
+tr:hover {
+  background-color: #f1f1f1; /* Fond légèrement plus clair lors du survol */
+}
+
+/* td */
+td {
+  color: #333; /* Texte sombre pour les données */
+}
+
+/* td (ajout d'un peu plus de contraste pour les données) */
+td {
+  font-size: 16px;
+  color: #555; /* Gris foncé pour le texte des cellules */
+}

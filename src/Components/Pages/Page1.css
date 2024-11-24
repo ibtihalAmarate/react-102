@@ -1,0 +1,98 @@
+/* Page1.css */
+
+/* Container principal de la page */
+.page1-container {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Fond blanc cassé */
+    text-align: center;
+  }
+  
+  /* En-tête de la page */
+  .header {
+    background-color: #007bff; /* Bleu primaire */
+    color: white;
+    padding: 60px 20px;
+  }
+  
+  .header-content {
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour lisibilité */
+    padding: 40px;
+    border-radius: 10px;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    background-color: #ffffff;
+    color: #007bff;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  /* Section des fonctionnalités */
+  .features {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    color: #333;
+  }
+  
+  .feature-item {
+    background-color: #e9f2fd; /* Bleu clair */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-item h3 {
+    font-size: 1.6em;
+    color: #007bff;
+  }
+  
+  .feature-item p {
+    color: #555;
+    font-size: 1.1em;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer a {
+    color: #ffb84d;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
